@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GoalBuddy</string>
+    <string name="hello">Привет, %1$s!</string>
+</resources>
