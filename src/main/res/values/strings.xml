@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">GoalBuddy</string>
     <string name="hello">Привет, %1$s!</string>
+    <string-array name="priority_array">
+        <item>Низкий</item>
+        <item>Средний</item>
+        <item>Высокий</item>
+    </string-array>
 </resources>

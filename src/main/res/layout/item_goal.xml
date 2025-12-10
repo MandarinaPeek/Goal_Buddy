@@ -30,6 +30,16 @@
             android:textSize="13sp"
             android:textColor="#666" />
 
+        <ImageButton
+            android:id="@+id/btnDeleteGoal"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="end"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_delete"
+            app:tint="@color/red"
+            android:contentDescription="Удалить цель"/>
+
 
     </LinearLayout>
 

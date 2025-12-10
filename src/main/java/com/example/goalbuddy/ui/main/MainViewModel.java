@@ -36,4 +36,8 @@ public class MainViewModel extends AndroidViewModel {
     public void insertGoal(Goal g) { repository.insert(g); }
     public void updateGoal(Goal g) { repository.update(g); }
     public void deleteGoal(Goal g) { repository.delete(g); }
+
+    public void delete(Goal goal) {
+        repository.delete(goal);
+    }
 }

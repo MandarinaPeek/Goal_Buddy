@@ -4,6 +4,7 @@ package com.example.goalbuddy.ui.main;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 
@@ -50,18 +51,37 @@ public class GoalAdapter extends ListAdapter<Goal, GoalAdapter.GoalViewHolder> {
         Goal g = getItem(position);
         holder.title.setText(g.title);
         holder.subtitle.setText(g.description != null ? g.description : "");
+
+        holder.btnDeleteGoal.setOnClickListener(v -> {
+            if (deleteListener != null) {
+                deleteListener.onDelete(g);
+            }
+        });
     }
+
+    public interface OnGoalDeleteListener {
+        void onDelete(Goal goal);
+    }
+
+    private OnGoalDeleteListener deleteListener;
+
+    public void setOnDeleteListener(OnGoalDeleteListener listener){
+        this.deleteListener = listener;
+    }
+
 
 
     static class GoalViewHolder extends RecyclerView.ViewHolder {
         TextView title;
         TextView subtitle;
-
+        ImageButton btnDeleteGoal;
 
         public GoalViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.goalTitle);
             subtitle = itemView.findViewById(R.id.goalSubtitle);
+
+            btnDeleteGoal = itemView.findViewById(R.id.btnDeleteGoal);
         }
     }
 }
